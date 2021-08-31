@@ -1,0 +1,12 @@
+.pesquisa{
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+  .pesquisa{
+    width: 550px;
+    margin: 0 auto;
+  }
+
+}
