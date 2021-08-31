@@ -8,6 +8,7 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { LogarComponent } from './logar/logar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { Menu2Component } from './menu2/menu2.component';
+import { ModalPostComponent } from './modal-post/modal-post.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { Menu2Component } from './menu2/menu2.component';
     RodapeComponent,
     LogarComponent,
     CadastrarComponent,
-    Menu2Component
+    Menu2Component,
+    ModalPostComponent
   ],
   imports: [
     BrowserModule,

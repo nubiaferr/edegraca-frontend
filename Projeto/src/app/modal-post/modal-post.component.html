@@ -1,0 +1,64 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-post" data-toggle="modal" data-target="#exampleModalCenter">
+  #
+</button>
+
+<!-- Modal -->
+<div class="modal fade container-fluid" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Criar publicação</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body d-flex">
+        <div class="modal-body">
+          <!-- Formulario -->
+          <div class="row d-flex">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="titulo">Título</label>
+                <input type="text" class="form-control" id="titulo" placeholder="Título do post">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="tema">Tema</label>
+                <select name="tema" id="tema" class="form-control">
+                  <option value="">Tema</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row d-flex">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="data">Quando vai ser?</label>
+                <input type="date" class="form-control" id="data">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="foto-post">Imagem do post</label>
+                <input type="text" class="form-control" id="foto-post" placeholder="Foto url">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <textarea name="descricao" id="descricao" cols="30" rows="5" class="form-control" placeholder="Dica: use hashtags"></textarea>
+          </div>
+
+
+
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-primary">Postar</button>
+      </div>
+    </div>
+  </div>
+</div>
