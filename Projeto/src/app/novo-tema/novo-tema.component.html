@@ -20,10 +20,11 @@
         <div class="cold-md-5">
           <div class="form-group">
             <input
-            type="text" class="form-control" id="description" placeholder="Dê um título ao seu tema">
+            [(ngModel)] = 'tema.title'
+            type="text" class="form-control" id="description" placeholder="Título do tema">
           </div>
           <div class="d-flex justify-content-center">
-            <button class="btn btn-light">Add tema</button>
+            <button class="btn btn-light" (click)='cadastraTema()'>Add tema</button>
           </div>
         </div>
       </div>
@@ -52,14 +53,14 @@
           </tr>
         </thead>
         <tbody>
-          <!-- <tr>
-            <th></th>
-            <td></td>
+          <tr *ngFor = 'let tema of listaTema'>
+            <th>{{ tema.id }}</th>
+            <td>{{ tema.title }}</td>
             <td class="d-flex justify-content-end">
-              <button class="btn btn-info mr-3"">Edit</button>
+              <button class="btn btn-info mr-3">Edit</button>
               <button class="btn btn-danger">Delete</button>
             </td>
-          </tr>-->
+          </tr>
         </tbody>
       </table>
     </div>
