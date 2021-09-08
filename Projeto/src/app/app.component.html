@@ -1,1 +1,4 @@
+<app-menu2 *ngIf = 'auth.logado()'></app-menu2>
+<app-menu *ngIf = 'auth.deslogado()'></app-menu>
 <router-outlet></router-outlet>
+<app-rodape></app-rodape>

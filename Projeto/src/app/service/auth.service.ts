@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { UsuarioLogin } from './../model/UsuarioLogin';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -25,7 +26,25 @@ export class AuthService {
     )
   }
 
+  logado(){
+    let ok = false
 
+    if (environment.token != ''){
+      ok = true
+    }
 
+    return ok
+  }
+
+  deslogado(){
+    let ok = false
+
+    if (environment.token == ''){
+      ok = true
+    }
+
+    return ok
+  }
+  
 
 }

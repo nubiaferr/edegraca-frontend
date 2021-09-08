@@ -12,6 +12,12 @@ import { Menu2Component } from './menu2/menu2.component';
 import { ModalPostComponent } from './modal-post/modal-post.component';
 import { FormsModule } from '@angular/forms';
 import { InicioComponent } from './inicio/inicio.component';
+import { MeusPostsComponent } from './meus-posts/meus-posts.component';
+import { ConfiguracaoComponent } from './configuracao/configuracao.component';
+import { SobreComponent } from './sobre/sobre.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { TemaComponent } from './tema/tema.component';
+import { NovoTemaComponent } from './novo-tema/novo-tema.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +28,12 @@ import { InicioComponent } from './inicio/inicio.component';
     CadastrarComponent,
     Menu2Component,
     ModalPostComponent,
-    InicioComponent
+    InicioComponent,
+    MeusPostsComponent,
+    ConfiguracaoComponent,
+    SobreComponent,
+    TemaComponent,
+    NovoTemaComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +41,10 @@ import { InicioComponent } from './inicio/inicio.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
