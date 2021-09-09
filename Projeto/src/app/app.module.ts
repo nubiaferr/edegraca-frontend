@@ -18,6 +18,8 @@ import { SobreComponent } from './sobre/sobre.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { TemaComponent } from './tema/tema.component';
 import { NovoTemaComponent } from './novo-tema/novo-tema.component';
+import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
+import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { NovoTemaComponent } from './novo-tema/novo-tema.component';
     ConfiguracaoComponent,
     SobreComponent,
     TemaComponent,
-    NovoTemaComponent
+    NovoTemaComponent,
+    TemaEditComponent,
+    TemaDeleteComponent
   ],
   imports: [
     BrowserModule,

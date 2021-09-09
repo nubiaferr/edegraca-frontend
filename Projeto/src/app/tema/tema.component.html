@@ -90,8 +90,12 @@
               <p class="card-text">
                   <small class="text-muted"><i class="fa fa-user" aria-hidden="true">
                   </i>{{item.usuario.nome}}
-                      <i class="fa fa-clock-o ml-4" aria-hidden="true"></i> {{item.data | date: 'dd/MM/yyyy'}}
-                      <i class="fa fa-building ml-4" aria-hidden="true"></i> Quem faz</small>
+                      <i class="fa fa-clock-o ml-4" aria-hidden="true">
+                      </i>{{item.data | date: 'dd/MM/yyyy'}}
+                      <i class="fa fa-building ml-4" aria-hidden="true">
+                      </i>{{ item.quemFaz}}
+
+                    </small>
               </p>
               <!-- texto da postagem -->
               <p class="card-text">{{item.descricao}}</p>
@@ -147,6 +151,7 @@
               <div class="form-group">
                 <label for="titulo">Quem faz?</label>
                 <input
+                [(ngModel)]='postagem.quemFaz'
                 type="text" class="form-control" id="titulo" placeholder="Quem está oferecendo isso">
               </div>
             </div>
@@ -155,14 +160,10 @@
           <div class="row d-flex">
             <div class="col-md-6">
               <div class="form-group">
-                <label for="data">Quando vai ser?</label>
-                <input type="date" class="form-control" id="data">
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
                 <label for="foto-post">Imagem do post</label>
-                <input type="text" class="form-control" id="foto-post" placeholder="Foto url">
+                <input
+                [(ngModel)]='postagem.midia'
+                type="text" class="form-control" id="foto-post" placeholder="Foto url">
               </div>
             </div>
           </div>

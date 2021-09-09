@@ -1,3 +1,5 @@
+import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
+import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { TemaComponent } from './tema/tema.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { MeusPostsComponent } from './meus-posts/meus-posts.component';
@@ -18,7 +20,9 @@ const routes: Routes = [
   {path: 'configuracao', component: ConfiguracaoComponent},
   {path: 'sobre', component: SobreComponent},
   {path: 'tema', component: TemaComponent},
-  {path: 'novo-tema', component: NovoTemaComponent}
+  {path: 'novo-tema', component: NovoTemaComponent},
+  {path: 'tema-edit/:id', component: TemaEditComponent},
+  {path: 'tema-delete/:id', component: TemaDeleteComponent}
 ];
 
 @NgModule({
