@@ -1,58 +1,186 @@
 <div class="row">
   <div class="d-flex justify-content-center mt-4 mb-4 container p-0">
-    <div class="card-deck p-0">
+      <div class="card-deck p-0">
 
-      <div class="card p-4">
-        <div class="card-body text-center pr-0 pl-0">
-          <i class="fa fa-medkit card-title" aria-hidden="true"></i>
-          <p class="card-text">SAÚDE</p>
-        </div>
+          <a routerLink=''>
+              <div class="card p-4 menu">
+                  <div class="card-body text-center pr-0 pl-0">
+                      <i class="fa fa-medkit card-title icon" aria-hidden="true"></i>
+                      <p class="card-text">SAÚDE</p>
+                  </div>
+              </div>
+          </a>
+
+          <a routerLink=''>
+              <div class="card p-4 menu">
+                  <div class="card-body text-center pr-0 pl-0">
+                      <i class="fa fa-graduation-cap card-title icon" aria-hidden="true"></i>
+                      <p class="card-text">EDUCAÇÃO</p>
+                  </div>
+              </div>
+          </a>
+          <a routerLink=''>
+              <div class="card p-4 menu">
+                  <div class="card-body text-center pr-0 pl-0">
+                      <i class="fa fa-music card-title icon" aria-hidden="true"></i>
+                      <p class="card-text">CULTURA</p>
+                  </div>
+              </div>
+          </a>
+          <a routerLink=''>
+              <div class="card p-4 menu">
+                  <div class="card-body text-center pr-0 pl-0">
+                      <i class="fa fa-futbol-o card-title icon" aria-hidden="true"></i>
+                      <p class="card-text">ESPORTE</p>
+                  </div>
+              </div>
+          </a>
+          <a routerLink=''>
+              <div class="card p-4 menu menu">
+                  <div class="card-body text-center pr-0 pl-0">
+                      <i class="fa fa-handshake-o card-title icon" aria-hidden="true"></i>
+                      <p class="card-text">SOCIAL</p>
+                  </div>
+              </div>
+          </a>
+
+          <a routerLink='/novo-tema'>
+              <div class="card p-4 menu">
+                  <div class="card-body text-center pr-0 pl-0">
+                      <i class="fa fa-plus card-title icon" aria-hidden="true"></i>
+                      <p class="card-text">MAIS</p>
+                  </div>
+              </div>
+          </a>
       </div>
+  </div>
+</div>
 
-      <div class="card p-4">
-        <div class="card-body text-center pr-0 pl-0">
-          <i class="fa fa-graduation-cap card-title" aria-hidden="true"></i>
-          <p class="card-text">EDUCAÇÃO</p>
-        </div>
+<!-- Titulo -->
+<div class="row">
+  <div class="col-md-8 d-flex justify-content-center mt-4 mb-4 container p-0">
+      <h1 class="text-left">Postagens em destaque</h1>
+  </div>
+</div>
+
+<!-- Card de postagem -->
+<div class="row">
+  <div class="container" *ngFor='let item of listaPosts'>
+  <div class="col-md-6 d-flex justify-content-center mt-4 mb-4 container p-0">
+
+
+
+      <div class="card mb-3">
+          <!-- imagem do post -->
+          <img class="card-img-top" src="https://i.imgur.com/8qvK9N0.jpg" alt="Imagem de capa do card">
+          <div class="card-body">
+              <div class="row">
+                  <!-- titulo da postagem -->
+                  <div class="col-md-6 d-flex justify-content-start">
+                      <h5 class="card-title">{{ item.title }}</h5>
+                  </div>
+                  <!-- botão de like -->
+                  <div class="col-md-6 d-flex justify-content-end"><button type="button"
+                          class="btn btn-outline-primary rounded-pill"><i class="fa fa-heart" aria-hidden="true"></i>
+                          Like</button>
+                  </div>
+
+              </div>
+              <!-- autor e data -->
+              <p class="card-text">
+                  <small class="text-muted"><i class="fa fa-user" aria-hidden="true">
+                  </i>{{item.user.nome}}
+                      <i class="fa fa-clock-o ml-4" aria-hidden="true"></i> {{item.date | date: 'dd/MM/yyyy'}}
+                      <i class="fa fa-building ml-4" aria-hidden="true"></i> Quem faz</small>
+              </p>
+              <!-- texto da postagem -->
+              <p class="card-text">{{item.text}}</p>
+          </div>
       </div>
-
-
-      <div class="card p-4">
-        <div class="card-body text-center pr-0 pl-0">
-          <i class="fa fa-music card-title" aria-hidden="true"></i>
-          <p class="card-text">CULTURA</p>
-        </div>
-      </div>
-
-      <div class="card p-4">
-        <div class="card-body text-center pr-0 pl-0">
-          <i class="a fa-futbol-o card-title" aria-hidden="true"></i>
-          <p class="card-text">ESPORTE</p>
-        </div>
-      </div>
-
-      <div class="card p-4">
-        <div class="card-body text-center pr-0 pl-0">
-          <i class="fa  fa-handshake-o card-title" aria-hidden="true"></i>
-          <p class="card-text">DOAÇÕES</p>
-        </div>
-      </div>
-
-      <a routerLink='/novo-tema'>
-      <div class="card p-4">
-        <div class="card-body text-center pr-0 pl-0">
-          <i class="fa fa-plus card-title" aria-hidden="true"></i>
-          <p class="card-text">MAIS</p>
-        </div>
-      </div>
-      </a>
-
-
     </div>
-
-
   </div>
 </div>
 
 
+<!-- Modal -->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-post" data-toggle="modal" data-target="#exampleModalCenter">
+  #
+</button>
+
+<!-- Modal -->
+<div class="modal fade container-fluid" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Criar publicação</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body d-flex">
+        <div class="modal-body">
+          <!-- Formulario -->
+          <div class="row d-flex">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="titulo">Título</label>
+                <input
+                [(ngModel)]='postagem.title'
+                type="text" class="form-control" id="titulo" placeholder="Título do post">
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="tema">Tema</label>
+                <select name="tema" id="tema" class="form-control"
+                [(ngModel)] = 'idTema'
+                (change)='findByIdTema()'>
+                  <option value="{{ item.id }}" *ngFor='let item of listaTema'>
+                    {{ item.title }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="titulo">Quem faz?</label>
+                <input
+                type="text" class="form-control" id="titulo" placeholder="Quem está oferecendo isso">
+              </div>
+            </div>
+          </div>
+
+          <div class="row d-flex">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="data">Quando vai ser?</label>
+                <input type="date" class="form-control" id="data">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="foto-post">Imagem do post</label>
+                <input type="text" class="form-control" id="foto-post" placeholder="Foto url">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <textarea
+            [(ngModel)]='postagem.text'
+            name="descricao" id="descricao" cols="30" rows="5" class="form-control" placeholder="Dica: use hashtags"></textarea>
+          </div>
+
+
+
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-primary" (click)='postar()'>Postar</button>
+      </div>
+    </div>
+  </div>
+</div>
 

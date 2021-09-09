@@ -1,0 +1,33 @@
+.icon {
+  font-size: 30px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.menu:hover {
+  background-color: #3E90CC;
+  color: white;
+}
+
+.btn{
+  color: #3E90CC;
+  border-color: #3E90CC;
+}
+
+.btn:hover {
+  background-color: #3E90CC;
+  color: white;
+}
+
+.btn-post{
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+}
+
