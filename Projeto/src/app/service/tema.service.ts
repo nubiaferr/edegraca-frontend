@@ -18,15 +18,15 @@ export class TemaService {
   }
 
   getAllTema(): Observable <Tema []>{
-    return this.http.get<Tema[]>('https://nubiaferrdrinks.herokuapp.com/theme', this.token)
+    return this.http.get<Tema[]>('https://edegraca.herokuapp.com/temas', this.token)
   }
 
   postTema(tema: Tema) : Observable <Tema>{
-    return this.http.post<Tema>('https://nubiaferrdrinks.herokuapp.com/theme', tema, this.token)
+    return this.http.post<Tema>('https://edegraca.herokuapp.com/temas', tema, this.token)
   }
 
   getByIdTema(id: number): Observable<Tema>{
-    return this.http.get<Tema>(`https://nubiaferrdrinks.herokuapp.com/theme${id}`, this.token)
+    return this.http.get<Tema>(`https://edegraca.herokuapp.com/temas/${id}`, this.token)
   }
 
 }

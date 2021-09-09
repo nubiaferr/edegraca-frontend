@@ -45,10 +45,10 @@ export class ModalPostComponent implements OnInit {
 
   postar(){
     this.tema.id = this.idTema
-    this.postagem.theme = this.tema
+    this.postagem.tema = this.tema
 
     this.user.id = this.idUser
-    this.postagem.user = this.user
+    this.postagem.usuario = this.user
 
     this.postService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp

@@ -16,13 +16,13 @@ export class AuthService {
 
   logar(usuarioLogin: UsuarioLogin):Observable<UsuarioLogin>{
     return this.http.post<UsuarioLogin>(
-      'https://edegracanubia.herokuapp.com/usuario/logar', usuarioLogin
+      'https://edegraca.herokuapp.com/usuarios/logar', usuarioLogin
     )
   }
 
   cadastrar(usuario: Usuario): Observable<Usuario>{
     return this.http.post<Usuario>(
-      'https://edegracanubia.herokuapp.com/usuario/cadastrar', usuario
+      'https://edegraca.herokuapp.com/usuarios/cadastrar', usuario
     )
   }
 
@@ -45,6 +45,6 @@ export class AuthService {
 
     return ok
   }
-  
+
 
 }

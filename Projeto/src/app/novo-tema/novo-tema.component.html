@@ -20,7 +20,7 @@
         <div class="cold-md-5">
           <div class="form-group">
             <input
-            [(ngModel)] = 'tema.title'
+            [(ngModel)] = 'tema.titulo'
             type="text" class="form-control" id="description" placeholder="Título do tema">
           </div>
           <div class="d-flex justify-content-center">
@@ -55,7 +55,7 @@
         <tbody>
           <tr *ngFor = 'let tema of listaTema'>
             <th>{{ tema.id }}</th>
-            <td>{{ tema.title }}</td>
+            <td>{{ tema.titulo }}</td>
             <td class="d-flex justify-content-end">
               <button class="btn btn-info mr-3">Edit</button>
               <button class="btn btn-danger">Delete</button>

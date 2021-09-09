@@ -5,5 +5,5 @@ export class Usuario{
   public nome: string
   public senha: string
   public empresa: boolean
-  public postagens: Postagem[]
+  public postagem: Postagem[]
 }

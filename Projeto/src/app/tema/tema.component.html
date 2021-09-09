@@ -77,7 +77,7 @@
               <div class="row">
                   <!-- titulo da postagem -->
                   <div class="col-md-6 d-flex justify-content-start">
-                      <h5 class="card-title">{{ item.title }}</h5>
+                      <h5 class="card-title">{{ item.titulo }}</h5>
                   </div>
                   <!-- botão de like -->
                   <div class="col-md-6 d-flex justify-content-end"><button type="button"
@@ -89,12 +89,12 @@
               <!-- autor e data -->
               <p class="card-text">
                   <small class="text-muted"><i class="fa fa-user" aria-hidden="true">
-                  </i>{{item.user.nome}}
-                      <i class="fa fa-clock-o ml-4" aria-hidden="true"></i> {{item.date | date: 'dd/MM/yyyy'}}
+                  </i>{{item.usuario.nome}}
+                      <i class="fa fa-clock-o ml-4" aria-hidden="true"></i> {{item.data | date: 'dd/MM/yyyy'}}
                       <i class="fa fa-building ml-4" aria-hidden="true"></i> Quem faz</small>
               </p>
               <!-- texto da postagem -->
-              <p class="card-text">{{item.text}}</p>
+              <p class="card-text">{{item.descricao}}</p>
           </div>
       </div>
     </div>
@@ -126,7 +126,7 @@
               <div class="form-group">
                 <label for="titulo">Título</label>
                 <input
-                [(ngModel)]='postagem.title'
+                [(ngModel)]='postagem.titulo'
                 type="text" class="form-control" id="titulo" placeholder="Título do post">
               </div>
             </div>
@@ -139,7 +139,7 @@
                 [(ngModel)] = 'idTema'
                 (change)='findByIdTema()'>
                   <option value="{{ item.id }}" *ngFor='let item of listaTema'>
-                    {{ item.title }}</option>
+                    {{ item.titulo }}</option>
                 </select>
               </div>
             </div>
@@ -171,7 +171,7 @@
           <div class="form-group">
             <label for="descricao">Descrição</label>
             <textarea
-            [(ngModel)]='postagem.text'
+            [(ngModel)]='postagem.descricao'
             name="descricao" id="descricao" cols="30" rows="5" class="form-control" placeholder="Dica: use hashtags"></textarea>
           </div>
 
