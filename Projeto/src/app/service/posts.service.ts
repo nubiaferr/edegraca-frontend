@@ -24,4 +24,16 @@ export class PostsService {
   postPostagem(post: Postagem): Observable<Postagem>{
     return this.http.post<Postagem>('https://edegraca.herokuapp.com/postagens', post, this.token)
   }
+
+  putPostagem(post: Postagem):Observable<Postagem>{
+    return this.http.put<Postagem>('https://edegraca.herokuapp.com/postagens', post, this.token)
+  }
+
+  deletePostagem(id: number){
+    return this.http.delete(`https://edegraca.herokuapp.com/postagens/${id}`, this.token)
+  }
+
+  getByIdPost(id:number): Observable<Postagem>{
+    return this.http.get<Postagem>(`https://edegraca.herokuapp.com/postagens/${id}`, this.token)
+  }
 }

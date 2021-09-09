@@ -11,7 +11,6 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { Menu2Component } from './menu2/menu2.component';
 import { ModalPostComponent } from './modal-post/modal-post.component';
 import { FormsModule } from '@angular/forms';
-import { InicioComponent } from './inicio/inicio.component';
 import { MeusPostsComponent } from './meus-posts/meus-posts.component';
 import { ConfiguracaoComponent } from './configuracao/configuracao.component';
 import { SobreComponent } from './sobre/sobre.component';
@@ -20,6 +19,9 @@ import { TemaComponent } from './tema/tema.component';
 import { NovoTemaComponent } from './novo-tema/novo-tema.component';
 import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
+import { PostEditComponent } from './edit/post-edit/post-edit.component';
+import { PostDeleteComponent } from './delete/post-delete/post-delete.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -30,14 +32,16 @@ import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component'
     CadastrarComponent,
     Menu2Component,
     ModalPostComponent,
-    InicioComponent,
     MeusPostsComponent,
     ConfiguracaoComponent,
     SobreComponent,
     TemaComponent,
     NovoTemaComponent,
     TemaEditComponent,
-    TemaDeleteComponent
+    TemaDeleteComponent,
+    PostEditComponent,
+    PostDeleteComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,

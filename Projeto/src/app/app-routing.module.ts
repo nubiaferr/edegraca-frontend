@@ -10,6 +10,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ConfiguracaoComponent } from './configuracao/configuracao.component';
 import { NovoTemaComponent } from './novo-tema/novo-tema.component';
+import { PostEditComponent } from './edit/post-edit/post-edit.component';
+import { PostDeleteComponent } from './delete/post-delete/post-delete.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -22,7 +24,9 @@ const routes: Routes = [
   {path: 'tema', component: TemaComponent},
   {path: 'novo-tema', component: NovoTemaComponent},
   {path: 'tema-edit/:id', component: TemaEditComponent},
-  {path: 'tema-delete/:id', component: TemaDeleteComponent}
+  {path: 'tema-delete/:id', component: TemaDeleteComponent},
+  {path: 'post-edit/:id', component: PostEditComponent},
+  {path: 'post-delete/:id', component: PostDeleteComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,61 @@
+<div class="container mb-5 mt-5">
+
+  <div class="row mb-5">
+    <div class="col-md-12">
+      <h1 class="text-center text-secondary">Apagar Post</h1>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-12">
+      <h4 class="text-center text-secondary">Você tem certeza que deseja apagar esse post?</h4>
+    </div>
+  </div>
+
+  <!-- Card de postagem -->
+<div class="row">
+  <div class="container">
+  <div class="col-md-6 d-flex justify-content-center mt-4 mb-4 container p-0">
+
+
+
+      <div class="card mb-3">
+          <!-- imagem do post -->
+          <img class="card-img-top" src="https://i.imgur.com/8qvK9N0.jpg" alt="Imagem de capa do card">
+          <div class="card-body">
+              <div class="row">
+                  <!-- titulo da postagem -->
+                  <div class="col-md-6 d-flex justify-content-start">
+                      <h5 class="card-title">{{ postagem.titulo }}</h5>
+                  </div>
+
+              </div>
+              <!-- autor e data -->
+              <p class="card-text">
+                  <small class="text-muted"><i class="fa fa-user" aria-hidden="true">
+                  </i>{{postagem.usuario.nome}}
+                      <i class="fa fa-clock-o ml-4" aria-hidden="true">
+                      </i>{{postagem.data | date: 'dd/MM/yyyy'}}
+                      <i class="fa fa-building ml-4" aria-hidden="true">
+                      </i>{{ postagem.quemFaz}}
+
+                    </small>
+              </p>
+              <!-- texto da postagem -->
+              <p class="card-text">{{postagem.descricao}}</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-center">
+      <button class="btn btn-danger mr-4" routerLink='/tema' >Não</button>
+      <button class="btn btn-success" (click)='deletar()'>Sim</button>
+    </div>
+  </div>
+
+
+</div>
+
