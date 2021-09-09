@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { environment } from './../../environments/environment.prod';
 import { Tema } from './../model/Tema';
 import { TemaService } from './../service/tema.service';
@@ -22,10 +23,15 @@ export class TemaComponent implements OnInit {
 
   constructor(
     private postService: PostsService,
-    private temaService: TemaService
+    private temaService: TemaService,
+    private router: Router
   ) { }
 
   ngOnInit(){
+    if(environment.token == ''){
+      this.router.navigate(['/login'])
+    }
+
     this.getAllPosts()
     this.findAllTema()
   }
@@ -60,6 +66,8 @@ postar(){
     this.postagem = resp
     this.getAllPosts()
     alert('Postado')
+    this.router.navigate(['/tema'])
+
   })
 }
 
