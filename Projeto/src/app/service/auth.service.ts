@@ -14,6 +14,10 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
+  getByIdUser(id: number): Observable<Usuario>{
+    return this.http.get<Usuario>(`https://edegraca.herokuapp.com/usuarios/${id}`)
+  }
+
   logar(usuarioLogin: UsuarioLogin):Observable<UsuarioLogin>{
     return this.http.post<UsuarioLogin>(
       'https://edegraca.herokuapp.com/usuarios/logar', usuarioLogin

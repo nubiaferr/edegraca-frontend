@@ -1,3 +1,4 @@
+import { Usuario } from './../model/Usuario';
 import { environment } from './../../environments/environment.prod';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu2.component.css']
 })
 export class Menu2Component implements OnInit {
+  id = environment.id
+  usuario: Usuario = new Usuario()
 
   constructor(
     private router: Router

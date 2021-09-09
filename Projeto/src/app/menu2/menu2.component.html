@@ -32,8 +32,11 @@
           Perfil
         </button>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <p>Olá, {{ usuario.nome }}!</p>
+          <hr class="dropdown-divider">
+          <a class="dropdown-item" routerLink='/meus-posts'>Todos os posts</a>
           <a class="dropdown-item" routerLink='/meus-posts'>Meus posts</a>
-          <a class="dropdown-item" routerLink='/configuracao'>Configuração</a>
+          <a class="dropdown-item" [routerLink]="['/user-edit', id]">Configuração</a>
           <hr class="dropdown-divider">
           <a class="dropdown-item" (click)='sair()'>Sair</a>
         </div>
