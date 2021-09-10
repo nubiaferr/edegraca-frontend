@@ -17,6 +17,10 @@ export class PostsService {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
+  // token = {
+  //   headers: new HttpHeaders().set('Authorization', localStorage.getItem('token') || '')
+  // }
+
   getAllPosts() : Observable<Postagem[]> {
     return this.http.get<Postagem[]>('https://ehdegraca.herokuapp.com/postagens', this.token)
   }

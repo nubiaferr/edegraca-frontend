@@ -14,6 +14,7 @@ import { PostsService } from '../service/posts.service';
 })
 export class Menu2Component implements OnInit {
   id = environment.id
+  nome = environment.nome
   usuario: Usuario = new Usuario()
   postagem: Postagem = new Postagem()
   listaPost: Postagem[]

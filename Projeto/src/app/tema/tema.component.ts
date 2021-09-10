@@ -94,6 +94,10 @@ postar(){
   })
 }
 
+curtidas(){
+  console.log('clicou')
+}
+
 
 
 

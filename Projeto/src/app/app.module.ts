@@ -26,6 +26,7 @@ import { UserEditComponent } from './edit/user-edit/user-edit.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { OrderModule } from 'ngx-order-pipe';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { OrderModule } from 'ngx-order-pipe';
     PostDeleteComponent,
     InicioComponent,
     UserEditComponent,
-    AlertsComponent
+    AlertsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
