@@ -75,8 +75,9 @@
                         <form class="pesquisa">
                           <input
                           [(ngModel)]='tituloPost'
-                        class="form-control d-flex justify-content-center" type="search" placeholder="Pesquise por palavras-chave" aria-label="Search"
-                        (keydown)='findByTitulo()'>
+                          name="pesquisa"
+                        class="form-control d-flex justify-content-center" type="text" placeholder="Pesquise por palavras-chave" aria-label="Search" id="pesquisa"
+                        (keyup)='findByTitulo()'>
                         </form>
                       </div>
                     </div>

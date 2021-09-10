@@ -43,21 +43,18 @@ export class TemaComponent implements OnInit {
     this.findAllTema()
   }
 
-  getAllPosts(){
+getAllPosts(){
   this.postService.getAllPosts().subscribe((resp: Postagem[]) => {
     this.listaPosts = resp
   })
 }
 
 findByTitulo(){
-  console.log('Oi')
-
   if(this.tituloPost == ''){
     this.getAllPosts()
   } else {
     this.postService.getByTituloPost(this.tituloPost).subscribe((resp: Postagem[]) => {
       this.listaPosts = resp
-      console.log(resp)
     })
   }
 }
