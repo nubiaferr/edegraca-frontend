@@ -16,8 +16,6 @@ export class Menu2Component implements OnInit {
   id = environment.id
   usuario: Usuario = new Usuario()
   postagem: Postagem = new Postagem()
-  tituloPost: string
-  tituloTema: string
   listaPost: Postagem[]
   tema: Tema = new Tema()
   listaTema: Tema []
@@ -31,27 +29,8 @@ export class Menu2Component implements OnInit {
   ngOnInit() {
   }
 
-  findByTituloGeral(){
-    this.router.navigate(['/tema'])
 
-    if(this.tituloPost == '' && this.tituloTema == ''){
-      this.getAllPosts()
-    }
 
-    this.postService.getByTituloPost(this.tituloPost).subscribe((resp: Postagem[]) => {
-      this.listaPost = resp
-    })
-
-    this.temaService.getByTituloTema(this.tituloPost).subscribe((resp: Tema[]) => {
-      this.listaTema = resp
-    })
-  }
-
-  getAllPosts(){
-    this.postService.getAllPosts().subscribe((resp: Postagem[]) => {
-      this.listaPost = resp
-    })
-  }
 
   sair(){
     this.router.navigate(['/login'])

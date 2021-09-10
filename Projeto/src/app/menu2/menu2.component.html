@@ -10,15 +10,15 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+  <div class="collapse navbar-collapse d-flex justify-content-end" id="conteudoNavbarSuportado">
 
     <!-- Itens do menu-->
 
     <!-- Barra de pesquisa -->
-    <form class="d-flex pesquisa">
+    <!-- <form class="d-flex pesquisa">
       <input
       [(ngModel)] = 'tituloPost' [(ngModel)] = 'tituloTema' class="form-control me-2" type="search" placeholder="Search" aria-label="Search" (keyup) = 'findByTituloGeral()'>
-    </form>
+    </form> -->
 
     <!-- Botões -->
     <ul class="navbar-nav">
@@ -35,7 +35,7 @@
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
           <p>Olá, {{ usuario.nome }}!</p>
           <hr class="dropdown-divider">
-          <a class="dropdown-item" routerLink='/meus-posts'>Todos os posts</a>
+          <a class="dropdown-item" routerLink='/tema'>Todos os posts</a>
           <a class="dropdown-item" routerLink='/meus-posts'>Meus posts</a>
           <a class="dropdown-item" [routerLink]="['/user-edit', id]">Configuração</a>
           <hr class="dropdown-divider">

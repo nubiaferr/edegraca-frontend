@@ -1,3 +1,4 @@
+
 <div class="container mb-5 mt-5" id="postagens">
 
   <ul class="nav d-flex justify-content-center nav-pills mb-3" id="pills-tab" role="tablist">
@@ -68,11 +69,29 @@
       </li>
   </ul>
 
+                    <!-- Pesquisa -->
+                    <div class="row d-flex justify-content-center">
+                      <div class="col-md-6 mt-4">
+                        <form class="pesquisa">
+                          <input
+                          [(ngModel)]='tituloPost'
+                        class="form-control d-flex justify-content-center" type="search" placeholder="Pesquise por palavras-chave" aria-label="Search"
+                        (keydown)='findByTitulo()'>
+                        </form>
+                      </div>
+                    </div>
+
+                    <h1 class="text-center mb-4 mt-4">
+                      Postagens principais
+                    </h1>
+
+
   <!-- tabs de postagens -->
   <div class="tab-content" id="pills-tabContent">
 
       <div class="tab-pane fade show active mt-5 mb-5" id="pills-todas" role="tabpanel"
           aria-labelledby="pills-todas-tab">
+
 
           <!-- Card de postagem -->
           <div class="row">
@@ -125,6 +144,7 @@
       </div>
 
       <div class="tab-pane fade mt-5 mb-5" id="pills-saude" role="tabpanel" aria-labelledby="pills-saude-tab">
+
 
           <!-- Card de postagem -->
           <div class="row">

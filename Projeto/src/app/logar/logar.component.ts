@@ -37,7 +37,7 @@ export class LogarComponent implements OnInit {
       environment.id = this.usuarioLogin.id
       environment.senha = this.usuarioLogin.senha
 
-      this.router.navigate(['/inicio'])
+      this.router.navigate(['/tema'])
     }, erro => {
       if (erro.status == 500){
         this.alert.alertDanger("Senha e/ou e-mail estão incorretos.")

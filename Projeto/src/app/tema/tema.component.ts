@@ -21,6 +21,7 @@ export class TemaComponent implements OnInit {
   idTema: number
   idUser = environment.id
   listaPosts: Postagem[]
+  tituloPost: string
   key = 'date'
   reverse = true
 
@@ -47,6 +48,18 @@ export class TemaComponent implements OnInit {
   })
 }
 
+findByTitulo(){
+  console.log('Oi')
+
+  if(this.tituloPost == ''){
+    this.getAllPosts()
+  } else {
+    this.postService.getByTituloPost(this.tituloPost).subscribe((resp: Postagem[]) => {
+      this.listaPosts = resp
+      console.log(resp)
+    })
+  }
+}
 
 findAllTema(){
   this.temaService.getAllTema().subscribe((resp: Tema[]) => {
