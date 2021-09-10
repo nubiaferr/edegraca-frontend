@@ -17,7 +17,7 @@
     <!-- Barra de pesquisa -->
     <form class="d-flex pesquisa">
       <input
-      [(ngModel)] = 'tituloPost' [(ngModel)] = 'tituloTema' class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      [(ngModel)] = 'tituloPost' [(ngModel)] = 'tituloTema' class="form-control me-2" type="search" placeholder="Search" aria-label="Search" (keyup) = 'findByTituloGeral()'>
     </form>
 
     <!-- Botões -->

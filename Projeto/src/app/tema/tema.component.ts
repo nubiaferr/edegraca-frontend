@@ -71,7 +71,7 @@ postar(){
     this.postagem = resp
     this.getAllPosts()
 
-    this.alert.alertSuccess("Tema cadastrado com sucesso!")
+    this.alert.alertSuccess("Post feito com sucesso!")
     this.router.navigate(['/tema'])
 
   })
