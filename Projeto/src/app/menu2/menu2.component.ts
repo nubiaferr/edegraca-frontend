@@ -34,7 +34,7 @@ export class Menu2Component implements OnInit {
 
 
   sair(){
-    this.router.navigate(['/login'])
+    this.router.navigate(['/home'])
     environment.token = ''
     environment.email = ''
     environment.empresa = false

@@ -27,7 +27,7 @@ export class UserEditComponent implements OnInit {
   ngOnInit() {
     window.scroll(0,0)
     if(environment.token == ''){
-      this.router.navigate(['/login'])
+      this.router.navigate(['/home'])
     }
 
     this.idUser = this.route.snapshot.params['id']

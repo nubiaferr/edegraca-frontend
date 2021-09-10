@@ -18,7 +18,7 @@ export class AppComponent {
 
   ngOnInit(){
     if (environment.token == ''){
-      this.router.navigate(['/login'])
+      this.router.navigate(['/home'])
     }
   }
 }

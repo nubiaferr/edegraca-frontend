@@ -26,6 +26,9 @@ export class TemaComponent implements OnInit {
   key = 'date'
   reverse = true
   email = environment.email
+  clickCurtir = false
+  totalCurtidas: number = 0
+
 
   constructor(
     private postService: PostsService,
@@ -43,6 +46,10 @@ export class TemaComponent implements OnInit {
 
     if(environment.email == 'adm@edg.com'){
       console.log("Você são desenvolvedores?")
+    }
+
+    if(this.clickCurtir == true){
+      console.log('O que fazer agora que já clicou?')
     }
 
     this.getAllPosts()
@@ -95,7 +102,11 @@ postar(){
 }
 
 curtidas(){
-  console.log('clicou')
+  this.clickCurtir = true
+  this.postagem.curtir = this.totalCurtidas + 1
+
+  //post getByCurtidas
+  //getAll pra atualizar
 }
 
 

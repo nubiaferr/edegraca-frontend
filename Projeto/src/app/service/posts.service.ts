@@ -41,6 +41,8 @@ export class PostsService {
     return this.http.get<Postagem>(`https://ehdegraca.herokuapp.com/postagens/${id}`, this.token)
   }
 
+  //getByCurtidas
+
   getByTituloPost(titulo: string): Observable<Postagem []>{
     return this.http.get<Postagem[]>(`https://ehdegraca.herokuapp.com/postagens/titulo/${titulo}`, this.token)
   }

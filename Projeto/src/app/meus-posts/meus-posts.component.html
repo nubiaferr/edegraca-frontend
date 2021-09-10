@@ -1,3 +1,6 @@
+<a routerLink='/inicio' class="text-left text-secondary p-2 m-3">
+    <i class="fa fa-angle-double-left" aria-hidden="true"></i> Início
+  </a>
 <div class="container mb-5 mt-5" id="postagens">
 
   <ul class="nav d-flex justify-content-center nav-pills mb-3" id="pills-tab" role="tablist">
@@ -68,73 +71,224 @@
       </li> -->
   </ul>
 
-  <h1 class="text-center mb-4 mt-4">
-    Minhas postagens
-  </h1>
-
   <!-- tabs de postagens -->
   <div class="tab-content" id="pills-tabContent">
 
       <div class="tab-pane fade show active mt-5 mb-5" id="pills-todas" role="tabpanel"
           aria-labelledby="pills-todas-tab">
+
+          <!-- Card de postagem -->
+          <div class="row">
+              <div class="container" *ngFor='let item of user.postagem | orderBy : key : reverse'>
+                  <div class="col-md-8 d-flex justify-content-center container p-0">
+
+                      <div class="card mb-3">
+                          <!-- imagem do post -->
+                          <img class="card-img-top" src="https://i.imgur.com/8qvK9N0.jpg"
+                              alt="Imagem de capa do card">
+                          <div class="card-body">
+                              <div class="row">
+                                  <!-- titulo da postagem -->
+                                  <div class="col-md-6 d-flex justify-content-start">
+                                      <h5 class="card-title">{{ item.titulo }}</h5>
+                                  </div>
+                                  <!-- botão de like -->
+                                  <div class="col-md-6 d-flex justify-content-end"><button type="button" class="btn btn-outline-primary rounded-pill"><i class="fa fa-heart" aria-hidden="true"></i> Like</button>
+                                  </div>
+
+                              </div>
+                              <!-- autor e data -->
+                              <p class="card-text">
+                                  <small class="text-muted">
+                                      <!--<i class="fa fa-user mr-1" aria-hidden="true"></i>
+                                      {{item.usuario.nome}}-->
+                                      <i class="fa fa-clock-o ml-4 mr-1" aria-hidden="true"></i>
+                                      {{item.data | date: 'dd/MM/yyyy'}}
+                                     <i class="fa fa-building ml-4 mr-1" aria-hidden="true"></i>
+                                      Quem Faz: {{ item.quemFaz}}
+                                      <i class="fa fa-share-alt ml-4 mr-1" aria-hidden="true"></i>
+                                      Tema: {{ item.tema.titulo}}
+
+                                  </small>
+                              </p>
+                              <!-- texto da postagem -->
+                              <p class="card-text">{{item.descricao}}</p>
+                              <!-- Botoes-->
+                              <button class="btn mr-2" [routerLink]="['/post-edit', item.id]">
+                                Editar
+                              </button>
+                              <a [routerLink]="['/post-delete', item.id]" class="text-danger">Deletar</a>
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+
+      <div class="tab-pane fade mt-5 mb-5" id="pills-saude" role="tabpanel" aria-labelledby="pills-saude-tab">
+
+          <!-- Card de postagem -->
+          <div class="row">
+              <div class="container" *ngFor='let item of user.postagem | orderBy : key : reverse'>
+                  <div class="col-md-8 d-flex justify-content-center container p-0">
+
+                      <div class="card mb-3" *ngIf="item.tema.titulo === 'Saúde'">
+                          <!-- imagem do post -->
+                          <img class="card-img-top" src="https://i.imgur.com/8qvK9N0.jpg"
+                              alt="Imagem de capa do card">
+                          <div class="card-body">
+                              <div class="row">
+                                  <!-- titulo da postagem -->
+                                  <div class="col-md-6 d-flex justify-content-start">
+                                      <h5 class="card-title">{{ item.titulo }}</h5>
+                                  </div>
+                                  <!-- botão de like -->
+                                  <div class="col-md-6 d-flex justify-content-end"><button type="button" class="btn btn-outline-primary rounded-pill"><i class="fa fa-heart" aria-hidden="true"></i> Like</button>
+                                  </div>
+
+                              </div>
+                              <!-- autor e data -->
+                              <p class="card-text">
+                                  <small class="text-muted">
+                                      <!--<i class="fa fa-user mr-1" aria-hidden="true"></i>
+                                      {{item.usuario.nome}}-->
+                                      <i class="fa fa-clock-o ml-4 mr-1" aria-hidden="true"></i>
+                                      {{item.data | date: 'dd/MM/yyyy'}}
+                                     <i class="fa fa-building ml-4 mr-1" aria-hidden="true"></i>
+                                      Quem Faz: {{ item.quemFaz}}
+                                      <i class="fa fa-share-alt ml-4 mr-1" aria-hidden="true"></i>
+                                      Tema: {{ item.tema.titulo}}
+
+                                  </small>
+                              </p>
+                              <!-- texto da postagem -->
+                              <p class="card-text">{{item.descricao}}</p>
+                              <!-- Botoes-->
+                              <button class="btn mr-2" [routerLink]="['/post-edit', item.id]">
+                                Editar
+                              </button>
+                              <a [routerLink]="['/post-delete', item.id]" class="text-danger">Deletar</a>
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+
+      <div class="tab-pane fade mt-5 mb-5" id="pills-educacao" role="tabpanel" aria-labelledby="pills-educacao-tab">
+
            <!-- Card de postagem -->
-           <div class="row">
-            <div class="container" *ngFor='let item of user.postagem | orderBy : key : reverse'>
-                <div class="col-md-8 d-flex justify-content-center container p-0">
+          <div class="row">
+              <div class="container" *ngFor='let item of user.postagem | orderBy : key : reverse'>
+                  <div class="col-md-8 d-flex justify-content-center container p-0">
 
-                    <div class="card mb-3">
-                        <!-- imagem do post -->
-                        <img class="card-img-top" src={{ item.midia }}
-                            alt="Imagem de capa do card">
-                        <div class="card-body">
-                            <div class="row">
-                                <!-- titulo da postagem -->
-                                <div class="col-md-6 d-flex justify-content-start">
-                                    <h5 class="card-title">{{ item.titulo }}</h5>
-                                </div>
-                                <!-- botão de like -->
-                                <div class="col-md-6 d-flex justify-content-end"><button type="button" class="btn btn-outline-primary rounded-pill"><i class="fa fa-heart" aria-hidden="true"></i> Like</button>
-                                </div>
+                      <div class="card mb-3" *ngIf="item.tema.titulo === 'Educação'">
+                          <!-- imagem do post -->
+                          <img class="card-img-top" src="https://i.imgur.com/8qvK9N0.jpg"
+                              alt="Imagem de capa do card">
+                          <div class="card-body">
+                              <div class="row">
+                                  <!-- titulo da postagem -->
+                                  <div class="col-md-6 d-flex justify-content-start">
+                                      <h5 class="card-title">{{ item.titulo }}</h5>
+                                  </div>
+                                  <!-- botão de like -->
+                                  <div class="col-md-6 d-flex justify-content-end"><button type="button" class="btn btn-outline-primary rounded-pill"><i class="fa fa-heart" aria-hidden="true"></i> Like</button>
+                                  </div>
 
-                            </div>
-                            <!-- autor e data -->
-                            <p class="card-text">
-                                <small class="text-muted">
-                                    <!--<i class="fa fa-user mr-1" aria-hidden="true"></i>
-                                    {{item.usuario.nome}}-->
-                                    <i class="fa fa-clock-o ml-4 mr-1" aria-hidden="true"></i>
-                                    {{item.data | date: 'dd/MM/yyyy'}}
-                                   <i class="fa fa-building ml-4 mr-1" aria-hidden="true"></i>
-                                    Quem Faz: {{ item.quemFaz}}
-                                    <i class="fa fa-share-alt ml-4 mr-1" aria-hidden="true"></i>
-                                    Tema: {{ item.tema.titulo}}
+                              </div>
+                              <!-- autor e data -->
+                              <p class="card-text">
+                                  <small class="text-muted">
+                                      <!--<i class="fa fa-user mr-1" aria-hidden="true"></i>
+                                      {{item.usuario.nome}}-->
+                                      <i class="fa fa-clock-o ml-4 mr-1" aria-hidden="true"></i>
+                                      {{item.data | date: 'dd/MM/yyyy'}}
+                                     <i class="fa fa-building ml-4 mr-1" aria-hidden="true"></i>
+                                      Quem Faz: {{ item.quemFaz}}
+                                      <i class="fa fa-share-alt ml-4 mr-1" aria-hidden="true"></i>
+                                      Tema: {{ item.tema.titulo}}
 
-                                </small>
-                            </p>
-                            <!-- texto da postagem -->
-                            <p class="card-text">{{item.descricao}}</p>
-                            <!-- Botoes-->
-                            <button class="btn mr-2" [routerLink]="['/post-edit', item.id]">
-                              Editar
-                            </button>
-                            <a [routerLink]="['/post-delete', item.id]" class="text-danger">Deletar</a>
+                                  </small>
+                              </p>
+                              <!-- texto da postagem -->
+                              <p class="card-text">{{item.descricao}}</p>
+                              <!-- Botoes-->
+                              <button class="btn mr-2" [routerLink]="['/post-edit', item.id]">
+                                Editar
+                              </button>
+                              <a [routerLink]="['/post-delete', item.id]" class="text-danger">Deletar</a>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
 
-    </div>
+      <div class="tab-pane fade mt-5 mb-5" id="pills-cultura" role="tabpanel" aria-labelledby="pills-cultura-tab">
 
-    <div class="tab-pane fade mt-5 mb-5" id="pills-saude" role="tabpanel" aria-labelledby="pills-saude-tab">
+          <!-- Card de postagem -->
+          <div class="row">
+              <div class="container" *ngFor='let item of user.postagem | orderBy : key : reverse'>
+                  <div class="col-md-8 d-flex justify-content-center container p-0">
 
-      <!-- Card de postagem -->
-      <div class="row">
+                      <div class="card mb-3" *ngIf="item.tema.titulo === 'Cultura'">
+                          <!-- imagem do post -->
+                          <img class="card-img-top" src="https://i.imgur.com/8qvK9N0.jpg"
+                              alt="Imagem de capa do card">
+                          <div class="card-body">
+                              <div class="row">
+                                  <!-- titulo da postagem -->
+                                  <div class="col-md-6 d-flex justify-content-start">
+                                      <h5 class="card-title">{{ item.titulo }}</h5>
+                                  </div>
+                                  <!-- botão de like -->
+                                  <div class="col-md-6 d-flex justify-content-end"><button type="button" class="btn btn-outline-primary rounded-pill"><i class="fa fa-heart" aria-hidden="true"></i> Like</button>
+                                  </div>
+
+                              </div>
+                              <!-- autor e data -->
+                              <p class="card-text">
+                                  <small class="text-muted">
+                                      <!--<i class="fa fa-user mr-1" aria-hidden="true"></i>
+                                      {{item.usuario.nome}}-->
+                                      <i class="fa fa-clock-o ml-4 mr-1" aria-hidden="true"></i>
+                                      {{item.data | date: 'dd/MM/yyyy'}}
+                                     <i class="fa fa-building ml-4 mr-1" aria-hidden="true"></i>
+                                      Quem Faz: {{ item.quemFaz}}
+                                      <i class="fa fa-share-alt ml-4 mr-1" aria-hidden="true"></i>
+                                      Tema: {{ item.tema.titulo}}
+
+                                  </small>
+                              </p>
+                              <!-- texto da postagem -->
+                              <p class="card-text">{{item.descricao}}</p>
+                              <!-- Botoes-->
+                              <button class="btn mr-2" [routerLink]="['/post-edit', item.id]">
+                                Editar
+                              </button>
+                              <a [routerLink]="['/post-delete', item.id]" class="text-danger">Deletar</a>
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+
+      <div class="tab-pane fade mt-5 mb-5" id="pills-esporte" role="tabpanel" aria-labelledby="pills-esporte-tab">
+
+        <div class="row">
           <div class="container" *ngFor='let item of user.postagem | orderBy : key : reverse'>
               <div class="col-md-8 d-flex justify-content-center container p-0">
 
-                  <div class="card mb-3" *ngIf="item.tema.titulo === 'Saúde'">
+                  <div class="card mb-3" *ngIf="item.tema.titulo === 'Esporte'">
                       <!-- imagem do post -->
                       <img class="card-img-top" src="https://i.imgur.com/8qvK9N0.jpg"
                           alt="Imagem de capa do card">
@@ -177,67 +331,15 @@
           </div>
       </div>
 
-  </div>
-
-  <div class="tab-pane fade mt-5 mb-5" id="pills-educacao" role="tabpanel" aria-labelledby="pills-educacao-tab">
-
-       <!-- Card de postagem -->
-      <div class="row">
-          <div class="container" *ngFor='let item of user.postagem | orderBy : key : reverse'>
-              <div class="col-md-8 d-flex justify-content-center container p-0">
-
-                  <div class="card mb-3" *ngIf="item.tema.titulo === 'Educação'">
-                      <!-- imagem do post -->
-                      <img class="card-img-top" src="https://i.imgur.com/8qvK9N0.jpg"
-                          alt="Imagem de capa do card">
-                      <div class="card-body">
-                          <div class="row">
-                              <!-- titulo da postagem -->
-                              <div class="col-md-6 d-flex justify-content-start">
-                                  <h5 class="card-title">{{ item.titulo }}</h5>
-                              </div>
-                              <!-- botão de like -->
-                              <div class="col-md-6 d-flex justify-content-end"><button type="button" class="btn btn-outline-primary rounded-pill"><i class="fa fa-heart" aria-hidden="true"></i> Like</button>
-                              </div>
-
-                          </div>
-                          <!-- autor e data -->
-                          <p class="card-text">
-                              <small class="text-muted">
-                                  <!--<i class="fa fa-user mr-1" aria-hidden="true"></i>
-                                  {{item.usuario.nome}}-->
-                                  <i class="fa fa-clock-o ml-4 mr-1" aria-hidden="true"></i>
-                                  {{item.data | date: 'dd/MM/yyyy'}}
-                                 <i class="fa fa-building ml-4 mr-1" aria-hidden="true"></i>
-                                  Quem Faz: {{ item.quemFaz}}
-                                  <i class="fa fa-share-alt ml-4 mr-1" aria-hidden="true"></i>
-                                  Tema: {{ item.tema.titulo}}
-
-                              </small>
-                          </p>
-                          <!-- texto da postagem -->
-                          <p class="card-text">{{item.descricao}}</p>
-                          <!-- Botoes-->
-                          <button class="btn mr-2" [routerLink]="['/post-edit', item.id]">
-                            Editar
-                          </button>
-                          <a [routerLink]="['/post-delete', item.id]" class="text-danger">Deletar</a>
-
-                      </div>
-                  </div>
-              </div>
-          </div>
       </div>
-  </div>
 
-  <div class="tab-pane fade mt-5 mb-5" id="pills-cultura" role="tabpanel" aria-labelledby="pills-cultura-tab">
+      <div class="tab-pane fade mt-5 mb-5" id="pills-social" role="tabpanel" aria-labelledby="pills-social-tab">
 
-      <!-- Card de postagem -->
-      <div class="row">
+        <div class="row">
           <div class="container" *ngFor='let item of user.postagem | orderBy : key : reverse'>
               <div class="col-md-8 d-flex justify-content-center container p-0">
 
-                  <div class="card mb-3" *ngIf="item.tema.titulo === 'Cultura'">
+                  <div class="card mb-3" *ngIf="item.tema.titulo === 'Social'">
                       <!-- imagem do post -->
                       <img class="card-img-top" src="https://i.imgur.com/8qvK9N0.jpg"
                           alt="Imagem de capa do card">
@@ -280,226 +382,125 @@
           </div>
       </div>
 
-  </div>
+      </div>
 
-  <div class="tab-pane fade mt-5 mb-5" id="pills-esporte" role="tabpanel" aria-labelledby="pills-esporte-tab">
+      <div class="tab-pane fade mt-5 mb-5" id="pills-outros" role="tabpanel" aria-labelledby="pills-outros-tab">
 
-       <!-- Card de postagem -->
-       <div class="row">
-        <div class="container" *ngFor='let item of user.postagem | orderBy : key : reverse'>
-            <div class="col-md-8 d-flex justify-content-center container p-0">
+        <div class="row">
+          <div class="container" *ngFor='let item of user.postagem | orderBy : key : reverse'>
+              <div class="col-md-8 d-flex justify-content-center container p-0">
 
-                <div class="card mb-3" *ngIf="item.tema.titulo === 'Esporte'">
-                    <!-- imagem do post -->
-                    <img class="card-img-top" src="https://i.imgur.com/8qvK9N0.jpg"
-                        alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <div class="row">
-                            <!-- titulo da postagem -->
-                            <div class="col-md-6 d-flex justify-content-start">
-                                <h5 class="card-title">{{ item.titulo }}</h5>
-                            </div>
-                            <!-- botão de like -->
-                            <div class="col-md-6 d-flex justify-content-end"><button type="button" class="btn btn-outline-primary rounded-pill"><i class="fa fa-heart" aria-hidden="true"></i> Like</button>
-                            </div>
+                  <div class="card mb-3" *ngIf="item.tema.titulo === 'Outros'">
+                      <!-- imagem do post -->
+                      <img class="card-img-top" src="https://i.imgur.com/8qvK9N0.jpg"
+                          alt="Imagem de capa do card">
+                      <div class="card-body">
+                          <div class="row">
+                              <!-- titulo da postagem -->
+                              <div class="col-md-6 d-flex justify-content-start">
+                                  <h5 class="card-title">{{ item.titulo }}</h5>
+                              </div>
+                              <!-- botão de like -->
+                              <div class="col-md-6 d-flex justify-content-end"><button type="button" class="btn btn-outline-primary rounded-pill"><i class="fa fa-heart" aria-hidden="true"></i> Like</button>
+                              </div>
 
-                        </div>
-                        <!-- autor e data -->
-                        <p class="card-text">
-                            <small class="text-muted">
-                                <!--<i class="fa fa-user mr-1" aria-hidden="true"></i>
-                                {{item.usuario.nome}}-->
-                                <i class="fa fa-clock-o ml-4 mr-1" aria-hidden="true"></i>
-                                {{item.data | date: 'dd/MM/yyyy'}}
-                               <i class="fa fa-building ml-4 mr-1" aria-hidden="true"></i>
-                                Quem Faz: {{ item.quemFaz}}
-                                <i class="fa fa-share-alt ml-4 mr-1" aria-hidden="true"></i>
-                                Tema: {{ item.tema.titulo}}
+                          </div>
+                          <!-- autor e data -->
+                          <p class="card-text">
+                              <small class="text-muted">
+                                  <!--<i class="fa fa-user mr-1" aria-hidden="true"></i>
+                                  {{item.usuario.nome}}-->
+                                  <i class="fa fa-clock-o ml-4 mr-1" aria-hidden="true"></i>
+                                  {{item.data | date: 'dd/MM/yyyy'}}
+                                 <i class="fa fa-building ml-4 mr-1" aria-hidden="true"></i>
+                                  Quem Faz: {{ item.quemFaz}}
+                                  <i class="fa fa-share-alt ml-4 mr-1" aria-hidden="true"></i>
+                                  Tema: {{ item.tema.titulo}}
 
-                            </small>
-                        </p>
-                        <!-- texto da postagem -->
-                        <p class="card-text">{{item.descricao}}</p>
-                        <!-- Botoes-->
-                        <button class="btn mr-2" [routerLink]="['/post-edit', item.id]">
-                          Editar
-                        </button>
-                        <a [routerLink]="['/post-delete', item.id]" class="text-danger">Deletar</a>
+                              </small>
+                          </p>
+                          <!-- texto da postagem -->
+                          <p class="card-text">{{item.descricao}}</p>
+                          <!-- Botoes-->
+                          <button class="btn mr-2" [routerLink]="['/post-edit', item.id]">
+                            Editar
+                          </button>
+                          <a [routerLink]="['/post-delete', item.id]" class="text-danger">Deletar</a>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
 
-  </div>
-
-  <div class="tab-pane fade mt-5 mb-5" id="pills-social" role="tabpanel" aria-labelledby="pills-social-tab">
-
-      <!-- Card de postagem -->
-      <div class="row">
-        <div class="container" *ngFor='let item of user.postagem | orderBy : key : reverse'>
-            <div class="col-md-8 d-flex justify-content-center container p-0">
-
-                <div class="card mb-3" *ngIf="item.tema.titulo === 'Social'">
-                    <!-- imagem do post -->
-                    <img class="card-img-top" src="https://i.imgur.com/8qvK9N0.jpg"
-                        alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <div class="row">
-                            <!-- titulo da postagem -->
-                            <div class="col-md-6 d-flex justify-content-start">
-                                <h5 class="card-title">{{ item.titulo }}</h5>
-                            </div>
-                            <!-- botão de like -->
-                            <div class="col-md-6 d-flex justify-content-end"><button type="button" class="btn btn-outline-primary rounded-pill"><i class="fa fa-heart" aria-hidden="true"></i> Like</button>
-                            </div>
-
-                        </div>
-                        <!-- autor e data -->
-                        <p class="card-text">
-                            <small class="text-muted">
-                                <!--<i class="fa fa-user mr-1" aria-hidden="true"></i>
-                                {{item.usuario.nome}}-->
-                                <i class="fa fa-clock-o ml-4 mr-1" aria-hidden="true"></i>
-                                {{item.data | date: 'dd/MM/yyyy'}}
-                               <i class="fa fa-building ml-4 mr-1" aria-hidden="true"></i>
-                                Quem Faz: {{ item.quemFaz}}
-                                <i class="fa fa-share-alt ml-4 mr-1" aria-hidden="true"></i>
-                                Tema: {{ item.tema.titulo}}
-
-                            </small>
-                        </p>
-                        <!-- texto da postagem -->
-                        <p class="card-text">{{item.descricao}}</p>
-                        <!-- Botoes-->
-                        <button class="btn mr-2" [routerLink]="['/post-edit', item.id]">
-                          Editar
-                        </button>
-                        <a [routerLink]="['/post-delete', item.id]" class="text-danger">Deletar</a>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+      </div>
 
   </div>
-
-  <div class="tab-pane fade mt-5 mb-5" id="pills-outros" role="tabpanel" aria-labelledby="pills-outros-tab">
-
-       <!-- Card de postagem -->
-       <div class="row">
-        <div class="container" *ngFor='let item of user.postagem | orderBy : key : reverse'>
-            <div class="col-md-8 d-flex justify-content-center container p-0">
-
-                <div class="card mb-3" *ngIf="item.tema.titulo === 'Outros'">
-                    <!-- imagem do post -->
-                    <img class="card-img-top" src="https://i.imgur.com/8qvK9N0.jpg"
-                        alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <div class="row">
-                            <!-- titulo da postagem -->
-                            <div class="col-md-6 d-flex justify-content-start">
-                                <h5 class="card-title">{{ item.titulo }}</h5>
-                            </div>
-                            <!-- botão de like -->
-                            <div class="col-md-6 d-flex justify-content-end"><button type="button" class="btn btn-outline-primary rounded-pill"><i class="fa fa-heart" aria-hidden="true"></i> Like</button>
-                            </div>
-
-                        </div>
-                        <!-- autor e data -->
-                        <p class="card-text">
-                            <small class="text-muted">
-                                <!--<i class="fa fa-user mr-1" aria-hidden="true"></i>
-                                {{item.usuario.nome}}-->
-                                <i class="fa fa-clock-o ml-4 mr-1" aria-hidden="true"></i>
-                                {{item.data | date: 'dd/MM/yyyy'}}
-                               <i class="fa fa-building ml-4 mr-1" aria-hidden="true"></i>
-                                Quem Faz: {{ item.quemFaz}}
-                                <i class="fa fa-share-alt ml-4 mr-1" aria-hidden="true"></i>
-                                Tema: {{ item.tema.titulo}}
-
-                            </small>
-                        </p>
-                        <!-- texto da postagem -->
-                        <p class="card-text">{{item.descricao}}</p>
-                        <!-- Botoes-->
-                        <button class="btn mr-2" [routerLink]="['/post-edit', item.id]">
-                          Editar
-                        </button>
-                        <a [routerLink]="['/post-delete', item.id]" class="text-danger">Deletar</a>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-  </div>
-
-</div>
 </div>
 
- <!-- Modal -->
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary btn-post" data-toggle="modal" data-target="#exampleModalCenter">
-    <i class="fa fa-pencil-square-o mt-1 ml-1 icon2" aria-hidden="true"></i>
-  </button>
 
-  <!-- Modal -->
-  <div class="modal fade container-fluid" id="exampleModalCenter" tabindex="-1" role="dialog"
-    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header titlePost">
-                <h5 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-pencil mr-1" aria-hidden="true"></i> Criar publicação</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body d-flex">
-                <div class="modal-body">
-                    <!-- Formulario -->
-                    <div class="row d-flex">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="titulo">Título</label>
-                                <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"
-                                    placeholder="Título do post">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row d-flex">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="tema">Tema</label>
-                                <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema'
-                                    (change)='findByIdTema()'>
-                                    <option value="{{ item.id }}" *ngFor='let item of listaTema'>
-                                        {{ item.titulo }}</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="titulo">Quem faz?</label>
-                                <input [(ngModel)]='postagem.quemFaz' type="text" class="form-control" id="titulo"
-                                    placeholder="Quem está oferecendo isso">
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="row d-flex">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="foto-post">Imagem do post</label>
-                                <input [(ngModel)]='postagem.midia' type="text" class="form-control" id="foto-post"
-                                    placeholder="Foto url">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
+<!-- Modal -->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-post" data-toggle="modal" data-target="#exampleModalCenter">
+  <i class="fa fa-pencil-square-o mt-1 ml-1 icon2" aria-hidden="true"></i>
+</button>
+
+<!-- Modal -->
+<div class="modal fade container-fluid" id="exampleModalCenter" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <div class="modal-header titlePost">
+              <h5 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-pencil mr-1" aria-hidden="true"></i> Criar publicação</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body d-flex">
+              <div class="modal-body">
+                  <!-- Formulario -->
+                  <div class="row d-flex">
+                      <div class="col-md-12">
+                          <div class="form-group">
+                              <label for="titulo">Título</label>
+                              <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"
+                                  placeholder="Título do post">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row d-flex">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="tema">Tema</label>
+                              <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema'
+                                  (change)='findByIdTema()'>
+                                  <option value="{{ item.id }}" *ngFor='let item of listaTema'>
+                                      {{ item.titulo }}</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="titulo">Quem faz?</label>
+                              <input [(ngModel)]='postagem.quemFaz' type="text" class="form-control" id="titulo"
+                                  placeholder="Quem está oferecendo isso">
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="row d-flex">
+                      <div class="col-md-12">
+                          <div class="form-group">
+                              <label for="foto-post">Imagem do post</label>
+                              <input [(ngModel)]='postagem.midia' type="text" class="form-control" id="foto-post"
+                                  placeholder="Foto url">
+                          </div>
+                      </div>
+                  </div>
+
+
+                  <div class="form-group">
                       <label for="descricao">Descrição</label>
                       <textarea [(ngModel)]='postagem.descricao' name="descricao" id="descricao" cols="30" rows="5"
                           class="form-control" placeholder="Dica: use hashtags"></textarea>

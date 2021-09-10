@@ -110,7 +110,9 @@
                                       <h5 class="card-title">{{ item.titulo }}</h5>
                                   </div>
                                   <!-- botão de like -->
-                                  <div class="col-md-6 d-flex justify-content-end"><button type="button" class="btn btn-outline-primary rounded-pill"><i class="fa fa-heart" aria-hidden="true"></i> Like</button>
+                                  <div class="col-md-6 d-flex justify-content-end"><button type="button" class="btn btn-outline-primary rounded-pill"
+                                    (click)='curtidas()'
+                                    ><i class="fa fa-heart" aria-hidden="true"></i> {{postagem.curtir}}</button>
                                   </div>
 
                               </div>
