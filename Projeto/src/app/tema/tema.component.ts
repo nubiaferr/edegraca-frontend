@@ -24,6 +24,7 @@ export class TemaComponent implements OnInit {
   tituloPost: string
   key = 'date'
   reverse = true
+  email = environment.email
 
   constructor(
     private postService: PostsService,
@@ -89,5 +90,7 @@ postar(){
 
   })
 }
+
+
 
 }

@@ -1,0 +1,34 @@
+.icon {
+  font-size: 30px;
+}
+
+.icon2 {
+  font-size: 30px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.menu:hover, .btn:hover, .titlePost{
+  background-color: #3E90CC;
+  color: white;
+  border-color: none;
+}
+
+.btn{
+  color: #3E90CC;
+  border-color: #3E90CC;
+}
+
+.btn-post{
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  color: white;
+  background-color: #3E90CC;
+}
