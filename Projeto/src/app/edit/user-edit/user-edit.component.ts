@@ -1,3 +1,4 @@
+import { AlertsService } from './../../service/alerts.service';
 import { environment } from './../../../environments/environment.prod';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from './../../service/auth.service';
@@ -19,10 +20,12 @@ export class UserEditComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alert: AlertsService
   ) { }
 
   ngOnInit() {
+    window.scroll(0,0)
     if(environment.token == ''){
       this.router.navigate(['/login'])
     }
@@ -43,12 +46,12 @@ export class UserEditComponent implements OnInit {
     this.usuario.empresa = this.tipoUser
 
     if(this.usuario.senha != this.confirmarSenha){
-      alert("Senhas não coincidem.")
+      this.alert.alertDanger("Senhas não coincidem.")
     } else {
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
         this.router.navigate(['/inicio'])
-        alert("Usuário atualizado, faça login novamente")
+        this.alert.alertSuccess("Usuário atualizado, faça login novamente")
         environment.token = ''
         environment.email = ''
         environment.empresa = false

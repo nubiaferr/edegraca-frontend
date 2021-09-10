@@ -1,3 +1,4 @@
+import { AlertsService } from './../service/alerts.service';
 import { AuthService } from './../service/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../model/Usuario';
@@ -16,7 +17,8 @@ export class CadastrarComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private alert: AlertsService
   ) { }
 
   ngOnInit() {
@@ -35,12 +37,12 @@ export class CadastrarComponent implements OnInit {
     this.usuario.empresa = this.tipoUser
 
     if(this.usuario.senha != this.confirmarSenha){
-      alert("Senhas não coincidem.")
+      this.alert.alertDanger("Senhas não coincidem.")
     } else {
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
         this.router.navigate(['/login'])
-        alert("Usuário cadastrado com sucesso!")
+        this.alert.alertSuccess("Usuário cadastrado com sucesso!")
       })
     }
   }

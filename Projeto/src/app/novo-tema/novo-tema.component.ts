@@ -1,3 +1,5 @@
+import { environment } from './../../environments/environment.prod';
+import { AlertsService } from './../service/alerts.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Tema } from '../model/Tema';
@@ -14,17 +16,23 @@ export class NovoTemaComponent implements OnInit {
 
   constructor(
     private temaService: TemaService,
-    private router: Router
+    private router: Router,
+    private alert: AlertsService
   ) { }
 
   ngOnInit(){
+    window.scroll(0,0)
+    if(environment.token == ''){
+      this.router.navigate(['/login'])
+    }
     this.findAllTema()
   }
 
   cadastraTema(){
     this.temaService.postTema(this.tema).subscribe((resp: Tema) => {
       this.tema = resp
-      alert('Tema cadastrado com sucesso')
+
+      this.alert.alertSuccess("Tema cadastrado com sucesso!")
       this.findAllTema()
       this.tema = new Tema()
     })

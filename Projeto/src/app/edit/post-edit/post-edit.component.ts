@@ -1,3 +1,4 @@
+import { AlertsService } from './../../service/alerts.service';
 import { TemaService } from 'src/app/service/tema.service';
 import { Usuario } from './../../model/Usuario';
 import { Tema } from 'src/app/model/Tema';
@@ -24,10 +25,12 @@ export class PostEditComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private postService: PostsService,
-    private temaService: TemaService
+    private temaService: TemaService,
+    private alert: AlertsService
   ) { }
 
   ngOnInit(){
+    window.scroll(0,0)
     if(environment.token == ''){
       this.router.navigate(['/login'])
     }
@@ -61,7 +64,7 @@ export class PostEditComponent implements OnInit {
 
     this.postService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
-      alert('Post alterado')
+      this.alert.alertSuccess("Post atualizado com sucesso!")
       this.router.navigate(['/tema'])
     })
   }

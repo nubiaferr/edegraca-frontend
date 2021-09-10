@@ -1,3 +1,4 @@
+import { AlertsService } from './../../service/alerts.service';
 import { environment } from './../../../environments/environment.prod';
 import { PostsService } from './../../service/posts.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -16,10 +17,12 @@ export class PostDeleteComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private postService: PostsService
+    private postService: PostsService,
+    private alert: AlertsService
   ) { }
 
   ngOnInit() {
+    window.scroll(0,0)
     if(environment.token == ''){
       this.router.navigate(['/login'])
     }
@@ -36,7 +39,7 @@ export class PostDeleteComponent implements OnInit {
 
   deletar(){
     this.postService.deletePostagem(this.idPost).subscribe(() => {
-      alert('Post deletado')
+      this.alert.alertSuccess("Post deletado com sucesso")
       this.router.navigate(['/tema'])
     })
   }

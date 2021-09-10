@@ -1,3 +1,4 @@
+import { AlertsService } from './../service/alerts.service';
 import { Router } from '@angular/router';
 import { environment } from './../../environments/environment.prod';
 import { Tema } from './../model/Tema';
@@ -25,10 +26,12 @@ export class InicioComponent implements OnInit {
   constructor(
     private postService: PostsService,
     private temaService: TemaService,
-    private router: Router
+    private router: Router,
+    private alert: AlertsService
   ) { }
 
   ngOnInit(){
+    window.scroll(0,0)
     if(environment.token == ''){
       this.router.navigate(['/login'])
     }
@@ -66,7 +69,7 @@ postar(){
   this.postService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
     this.postagem = resp
     this.getAllPosts()
-    alert('Postado')
+    this.alert.alertSuccess("Post feito com sucesso!")
     this.router.navigate(['/inicio'])
 
   })
