@@ -273,19 +273,134 @@
 
       <div class="tab-pane fade mt-5 mb-5" id="pills-esporte" role="tabpanel" aria-labelledby="pills-esporte-tab">
 
-          postagens sobre esporte
+        <!-- Card de postagem -->
+        <div class="row">
+          <div class="container" *ngFor='let item of listaPosts | orderBy : key : reverse'>
+              <div class="col-md-8 d-flex justify-content-center container p-0">
+                  <div class="card mb-3" *ngIf="item.tema.titulo === 'Esporte'">
+                      <!-- imagem do post -->
+                      <img class="card-img-top" src="https://i.imgur.com/8qvK9N0.jpg"
+                          alt="Imagem de capa do card">
+                      <div class="card-body">
+                          <div class="row">
+                              <!-- titulo da postagem -->
+                              <div class="col-md-6 d-flex justify-content-start">
+                                  <h5 class="card-title">{{ item.titulo }}</h5>
+                              </div>
+                              <!-- botão de like -->
+                              <div class="col-md-6 d-flex justify-content-end"><button type="button" class="btn btn-outline-primary rounded-pill"><i class="fa fa-heart" aria-hidden="true"></i> Like</button>
+                              </div>
+                          </div>
+                          <!-- autor e data -->
+                          <p class="card-text">
+                              <small class="text-muted">
+                                  <i class="fa fa-user mr-1" aria-hidden="true"></i>
+                                  {{item.usuario.nome}}
+                                  <i class="fa fa-clock-o ml-4 mr-1" aria-hidden="true"></i>
+                                  {{item.data | date: 'dd/MM/yyyy'}}
+                                  <i class="fa fa-building ml-4 mr-1" aria-hidden="true"></i>
+                                  Quem Faz: {{ item.quemFaz}}
+                                  <i class="fa fa-share-alt ml-4 mr-1" aria-hidden="true"></i>
+                                  Tema: {{ item.tema.titulo}}
+                              </small>
+                          </p>
+                          <!-- texto da postagem -->
+                          <p class="card-text">{{item.descricao}}</p>
 
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
+
+  </div>
 
       <div class="tab-pane fade mt-5 mb-5" id="pills-social" role="tabpanel" aria-labelledby="pills-social-tab">
 
-          postagens sobre social
+        <!-- Card de postagem -->
+        <div class="row">
+          <div class="container" *ngFor='let item of listaPosts | orderBy : key : reverse'>
+              <div class="col-md-8 d-flex justify-content-center container p-0">
+                  <div class="card mb-3" *ngIf="item.tema.titulo === 'Social'">
+                      <!-- imagem do post -->
+                      <img class="card-img-top" src="https://i.imgur.com/8qvK9N0.jpg"
+                          alt="Imagem de capa do card">
+                      <div class="card-body">
+                          <div class="row">
+                              <!-- titulo da postagem -->
+                              <div class="col-md-6 d-flex justify-content-start">
+                                  <h5 class="card-title">{{ item.titulo }}</h5>
+                              </div>
+                              <!-- botão de like -->
+                              <div class="col-md-6 d-flex justify-content-end"><button type="button" class="btn btn-outline-primary rounded-pill"><i class="fa fa-heart" aria-hidden="true"></i> Like</button>
+                              </div>
+                          </div>
+                          <!-- autor e data -->
+                          <p class="card-text">
+                              <small class="text-muted">
+                                  <i class="fa fa-user mr-1" aria-hidden="true"></i>
+                                  {{item.usuario.nome}}
+                                  <i class="fa fa-clock-o ml-4 mr-1" aria-hidden="true"></i>
+                                  {{item.data | date: 'dd/MM/yyyy'}}
+                                  <i class="fa fa-building ml-4 mr-1" aria-hidden="true"></i>
+                                  Quem Faz: {{ item.quemFaz}}
+                                  <i class="fa fa-share-alt ml-4 mr-1" aria-hidden="true"></i>
+                                  Tema: {{ item.tema.titulo}}
+                              </small>
+                          </p>
+                          <!-- texto da postagem -->
+                          <p class="card-text">{{item.descricao}}</p>
 
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
+
+  </div>
 
       <div class="tab-pane fade mt-5 mb-5" id="pills-outros" role="tabpanel" aria-labelledby="pills-outros-tab">
 
-          postagens sobre outros
+          <!-- Card de postagem -->
+          <div class="row">
+            <div class="container" *ngFor='let item of listaPosts | orderBy : key : reverse'>
+                <div class="col-md-8 d-flex justify-content-center container p-0">
+                    <div class="card mb-3" *ngIf="item.tema.titulo === 'Outros'">
+                        <!-- imagem do post -->
+                        <img class="card-img-top" src="https://i.imgur.com/8qvK9N0.jpg"
+                            alt="Imagem de capa do card">
+                        <div class="card-body">
+                            <div class="row">
+                                <!-- titulo da postagem -->
+                                <div class="col-md-6 d-flex justify-content-start">
+                                    <h5 class="card-title">{{ item.titulo }}</h5>
+                                </div>
+                                <!-- botão de like -->
+                                <div class="col-md-6 d-flex justify-content-end"><button type="button" class="btn btn-outline-primary rounded-pill"><i class="fa fa-heart" aria-hidden="true"></i> Like</button>
+                                </div>
+                            </div>
+                            <!-- autor e data -->
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    <i class="fa fa-user mr-1" aria-hidden="true"></i>
+                                    {{item.usuario.nome}}
+                                    <i class="fa fa-clock-o ml-4 mr-1" aria-hidden="true"></i>
+                                    {{item.data | date: 'dd/MM/yyyy'}}
+                                    <i class="fa fa-building ml-4 mr-1" aria-hidden="true"></i>
+                                    Quem Faz: {{ item.quemFaz}}
+                                    <i class="fa fa-share-alt ml-4 mr-1" aria-hidden="true"></i>
+                                    Tema: {{ item.tema.titulo}}
+                                </small>
+                            </p>
+                            <!-- texto da postagem -->
+                            <p class="card-text">{{item.descricao}}</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
       </div>
 
