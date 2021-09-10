@@ -58,7 +58,7 @@
               </div>
           </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf='authService.adm()'>
           <a routerLink='/novo-tema' class="nav-link card p-4 menu ml-4" id="pills-outros-tab" data-toggle="pill"
               href="#pills-outros" role="tab" aria-controls="pills-outros" aria-selected="true">
               <div class="card-body text-center pr-0 pl-0">
@@ -130,6 +130,7 @@
                               </p>
                               <!-- texto da postagem -->
                               <p class="card-text">{{item.descricao}}</p>
+                              <a *ngIf='authService.adm()' [routerLink]="['/post-delete', item.id]" class="text-danger">Deletar</a>
 
                           </div>
                       </div>

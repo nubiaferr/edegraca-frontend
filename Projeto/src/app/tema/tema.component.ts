@@ -1,3 +1,4 @@
+import { AuthService } from './../service/auth.service';
 import { AlertsService } from './../service/alerts.service';
 import { Router } from '@angular/router';
 import { environment } from './../../environments/environment.prod';
@@ -29,6 +30,7 @@ export class TemaComponent implements OnInit {
   constructor(
     private postService: PostsService,
     private temaService: TemaService,
+    public authService: AuthService,
     private router: Router,
     private alert: AlertsService
   ) { }
@@ -37,6 +39,10 @@ export class TemaComponent implements OnInit {
     window.scroll(0,0)
     if(environment.token == ''){
       this.router.navigate(['/login'])
+    }
+
+    if(environment.email == 'adm@edg.com'){
+      console.log("Você são desenvolvedores?")
     }
 
     this.getAllPosts()
@@ -87,6 +93,7 @@ postar(){
 
   })
 }
+
 
 
 

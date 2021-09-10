@@ -30,6 +30,16 @@ export class AuthService {
     )
   }
 
+  adm(){
+    let ok = false
+
+    if (environment.email == 'adm@edg.com'){
+      ok = true
+    }
+
+    return ok
+  }
+
   logado(){
     let ok = false
 
