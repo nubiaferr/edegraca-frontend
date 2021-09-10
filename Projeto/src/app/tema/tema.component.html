@@ -76,7 +76,7 @@
 
           <!-- Card de postagem -->
           <div class="row">
-              <div class="container" *ngFor='let item of listaPosts'>
+              <div class="container" *ngFor='let item of listaPosts | orderBy : key : reverse'>
                   <div class="col-md-8 d-flex justify-content-center container p-0">
 
                       <div class="card mb-3">
@@ -128,7 +128,7 @@
 
           <!-- Card de postagem -->
           <div class="row">
-              <div class="container" *ngFor='let item of listaPosts'>
+              <div class="container" *ngFor='let item of listaPosts | orderBy : key : reverse'>
                   <div class="col-md-8 d-flex justify-content-center container p-0">
                       <div class="card mb-3" *ngIf="item.tema.titulo === 'Saúde'">
                           <!-- imagem do post -->
@@ -171,7 +171,7 @@
 
           <!-- Card de postagem -->
           <div class="row">
-              <div class="container" *ngFor='let item of listaPosts'>
+              <div class="container" *ngFor='let item of listaPosts | orderBy : key : reverse'>
                   <div class="col-md-8 d-flex justify-content-center container p-0">
                       <div class="card mb-3" *ngIf="item.tema.titulo === 'Educação'">
                           <!-- imagem do post -->
@@ -214,7 +214,7 @@
 
           <!-- Card de postagem -->
           <div class="row">
-              <div class="container" *ngFor='let item of listaPosts'>
+              <div class="container" *ngFor='let item of listaPosts | orderBy : key : reverse'>
                   <div class="col-md-8 d-flex justify-content-center container p-0">
                       <div class="card mb-3" *ngIf="item.tema.titulo === 'Cultura'">
                           <!-- imagem do post -->

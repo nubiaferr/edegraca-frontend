@@ -37,5 +37,7 @@ export class TemaService {
     return this.http.delete(`https://edegraca.herokuapp.com/temas/${id}`, this.token)
   }
 
-
+  getByTituloTema(titulo: string): Observable<Tema []>{
+    return this.http.get<Tema[]>(`https://edegraca.herokuapp.com/temas/titulo/${titulo}`, this.token)
+  }
 }

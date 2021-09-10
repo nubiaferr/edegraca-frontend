@@ -21,6 +21,8 @@ export class TemaComponent implements OnInit {
   idTema: number
   idUser = environment.id
   listaPosts: Postagem[]
+  key = 'date'
+  reverse = true
 
   constructor(
     private postService: PostsService,
