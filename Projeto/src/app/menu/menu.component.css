@@ -1,3 +1,15 @@
+.btn{
+  background-color: white !important;
+  color: #3E90CC !important;
+  border-color:  #3E90CC !important;
+}
+
+.btn:focus{
+  background-color: #3E90CC !important;
+  color: white !important;
+  border-color:  white !important;
+}
+
 @media (max-width: 800px)
 {
   #conteudoNavbarSuportado{

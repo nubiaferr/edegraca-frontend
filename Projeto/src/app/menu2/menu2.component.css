@@ -16,7 +16,7 @@
 
 .btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle {
   color: #fff;
-  background-color: #3E90CC !important;
+  background-color: #092A71 !important;
   border-color: white;
 }
 

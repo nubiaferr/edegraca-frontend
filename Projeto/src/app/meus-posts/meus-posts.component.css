@@ -47,4 +47,16 @@ a{
   #pills-tab a{
     margin: 0 auto !important;
   }
+
+  .rounded-pill{
+    margin: 0 auto;
+    margin-bottom: 5px;
+  }
+
+  .card-title{
+    width: 100%;
+    text-align: center;
+  }
+
 }
+
