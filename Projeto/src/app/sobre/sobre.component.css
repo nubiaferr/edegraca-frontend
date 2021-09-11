@@ -129,3 +129,31 @@ section .section-title {
     text-decoration: none;
     color: #555;
 }
+
+#img-head{
+  width: 450px;
+  height: 450px;
+}
+
+#img-head img{
+  height: 100%;
+  width: 100%;
+}
+
+@media(max-width: 800px){
+  #img-head{
+    width: 100%;
+    height: 100%;
+  }
+
+  #img-head img{
+    height: 100%;
+    width: 100%;
+    margin-left: 0 !important;
+  }
+
+  #visao{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}

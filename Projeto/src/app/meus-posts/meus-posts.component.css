@@ -23,6 +23,11 @@ a{
 }
 
 .btn{
+  color: #3E90CC;
+  border-color: #3E90CC;
+}
+
+.rounded-pill{
   color: #bf0603;
   border-color: #bf0603;
 }
