@@ -1,6 +1,6 @@
 <div class="container mb-5 mt-5" id="postagens">
 
-    <ul class="nav d-flex justify-content-center nav-pills mb-3" id="pills-tab" role="tablist">
+    <ul class="nav d-flex justify-content-center nav-pills mb-3 tema-mob" id="pills-tab" role="tablist">
 
         <!-- menu de temas  -->
         <li class="nav-item">
@@ -79,7 +79,7 @@
                 <input [(ngModel)]='tituloPost' name="pesquisa" class="form-control d-flex justify-content-center"
                     type="text" placeholder="Pesquise por palavras-chave" aria-label="Search" id="pesquisa"
                     (keyup)='findByTitulo()'>
-                    
+
                 </div>
             </form>
         </div>
@@ -134,7 +134,7 @@
                                 </p>
                                 <!-- Botoes-->
 
-                            
+
                                 <!-- texto da postagem -->
                                 <p class="card-text">{{item.descricao}}</p>
                                 <a *ngIf='authService.adm()' [routerLink]="['/post-delete', item.id]"
@@ -187,7 +187,7 @@
                                 </p>
                                 <!-- Botoes-->
 
-                            
+
                                 <!-- texto da postagem -->
                                 <p class="card-text">{{item.descricao}}</p>
                                 <a *ngIf='authService.adm()' [routerLink]="['/post-delete', item.id]"
@@ -238,7 +238,7 @@
                                 </p>
                                 <!-- Botoes-->
 
-                            
+
                                 <!-- texto da postagem -->
                                 <p class="card-text">{{item.descricao}}</p>
                                 <a *ngIf='authService.adm()' [routerLink]="['/post-delete', item.id]"
@@ -289,7 +289,7 @@
                                 </p>
                                 <!-- Botoes-->
 
-                            
+
                                 <!-- texto da postagem -->
                                 <p class="card-text">{{item.descricao}}</p>
                                 <a *ngIf='authService.adm()' [routerLink]="['/post-delete', item.id]"
@@ -341,7 +341,7 @@
                                 </p>
                                 <!-- Botoes-->
 
-                            
+
                                 <!-- texto da postagem -->
                                 <p class="card-text">{{item.descricao}}</p>
                                 <a *ngIf='authService.adm()' [routerLink]="['/post-delete', item.id]"
@@ -393,7 +393,7 @@
                                 </p>
                                 <!-- Botoes-->
 
-                            
+
                                 <!-- texto da postagem -->
                                 <p class="card-text">{{item.descricao}}</p>
                                 <a *ngIf='authService.adm()' [routerLink]="['/post-delete', item.id]"

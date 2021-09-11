@@ -11,19 +11,6 @@
   color: white;
 }
 
-.pesquisa{
-  width: 100%;
-  margin: 20px auto;
-}
-
-@media (min-width: 800px) {
-  .pesquisa{
-    width: 450px;
-    margin: 0 auto;
-  }
-
-}
-
 a{
   text-decoration: none;
   color: black;
@@ -49,4 +36,15 @@ a{
   right: 50px;
   color: white;
   background-color: #bf0603;
+}
+
+@media(max-width: 800px){
+  #pills-tab li{
+    width: 100%;
+    height: 30%;
+  }
+
+  #pills-tab a{
+    margin: 0 auto !important;
+  }
 }
