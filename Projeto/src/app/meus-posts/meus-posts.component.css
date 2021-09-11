@@ -11,6 +11,11 @@ a{
   color: black;
 }
 
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+  background-color: #3E90CC !important;
+  color: white;
+}
+
 .menu:hover, .btn:hover, .titlePost{
   background-color: #3E90CC;
   color: white;
@@ -18,8 +23,8 @@ a{
 }
 
 .btn{
-  color: #3E90CC;
-  border-color: #3E90CC;
+  color: #bf0603;
+  border-color: #bf0603;
 }
 
 .btn-post{
@@ -30,5 +35,5 @@ a{
   bottom: 50px;
   right: 50px;
   color: white;
-  background-color: #3E90CC;
+  background-color: #bf0603;
 }

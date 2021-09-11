@@ -1,73 +1,18 @@
-body{
-  padding-left: 0;
-}
 
-header {
-  position: relative;
-  background-color: black;
-  height: 75vh;
-  min-height: 25rem;
-  width: 100%;
-  overflow: hidden;
-}
-
-header video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: 0;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-}
-
-header .container {
-  position: relative;
-  z-index: 2;
-}
-
-header .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: black;
-  opacity: 0.5;
-  z-index: 1;
-}
-
-/* Media Query for devices withi coarse pointers and no hover functionality */
-
-/* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
-
-#temas{
+#menu{
   background: #3E90CC !important;
 }
 #funciona {
-  background: #092A71 !important;
+  background: white;
+  color: #092A71 ;
 }
 #destaques {
   background: #BF0603 !important;
 }
 
-@media (pointer: coarse) and (hover: none) {
-  header {
-    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
-  }
-
-  header video {
-    display: none;
-  }
-}
-
 .icon {
   font-size: 50px;
+  color: #BF0603 !important;
 }
 
 
@@ -78,6 +23,16 @@ a{
 
 .menu {
   color: #092A71;
+}
+
+.titulo {
+  color: #3E90CC;
+  font-size: 48px;
+}
+
+.titulo2 {
+  color: #3E90CC;
+  font-size: 18px;
 }
 
 .menu:hover {
@@ -190,5 +145,22 @@ a{
 }
 .frontside .card .card-title,
 .backside .card .card-title {
-  color: #3E90CC !important;
+  color: #BF0603 !important;
+}
+
+@media (max-width: 800px) {
+  .img-edg img{
+    width: 100%;
+    height: 100%;
+  }
+
+  .cont-mob{
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .t-mob{
+    text-align: center;
+  }
 }

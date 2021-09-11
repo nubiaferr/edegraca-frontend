@@ -1,5 +1,12 @@
 .bg-login{
-  background-image: url('https://cdn-images-1.medium.com/max/2000/1*BxRliTppPkeHSA7tpHQQbA@2x.png');
+  /* background-image: url('https://cdn-images-1.medium.com/max/2000/1*BxRliTppPkeHSA7tpHQQbA@2x.png'); */
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+}
+
+.bg-login{
+  background-image: url('https://i.imgur.com/TdfbBh3.png');
   height: 100vh;
   width: 100vw;
   background-size: cover;

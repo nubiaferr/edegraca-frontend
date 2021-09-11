@@ -6,6 +6,11 @@
   font-size: 30px;
 }
 
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+  background-color: #3E90CC !important;
+  color: white;
+}
+
 a{
   text-decoration: none;
   color: black;
