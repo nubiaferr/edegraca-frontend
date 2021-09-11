@@ -16,9 +16,9 @@
     <!-- Itens do menu-->
 
     <!-- Barra de pesquisa -->
-    <form class="d-flex pesquisa">
+    <div class="d-flex pages">
       <!-- Itens do menu-->
-      <div class="btn-group btn-group-toggle w-100" data-toggle="buttons">
+      <div class="btn-group btn-group-toggle w-100 pages-mb" data-toggle="buttons">
         <label class="btn btn-info active">
           <input type="radio" routerLink='/inicio' name="options" id="option1" autocomplete="off" value="false"><i
             class="fa fa-home mr-1" aria-hidden="true"></i> PÁGINA INICIAL
@@ -28,7 +28,7 @@
             class="fa fa-newspaper-o mr-1" aria-hidden="true"></i> MINHAS POSTAGENS
         </label>
       </div>
-    </form>
+    </div>
 
     <!-- Botões -->
     <ul class="navbar-nav">
@@ -40,7 +40,7 @@
       <!-- Dropdown -->
       <li>
         <div class="dropdown">
-          <button class="btn btn-outline-light dropdown-toggle mr-4" type="button" id="dropdownMenuButton"
+          <button class="btn btn-outline-light dropdown-toggle mr-4 btn-mob" type="button" id="dropdownMenuButton"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle mr-1"
               aria-hidden="true"></i> {{ nome }}
           </button>

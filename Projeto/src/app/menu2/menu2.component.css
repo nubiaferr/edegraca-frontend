@@ -1,14 +1,6 @@
-.pesquisa{
-  width: 100%;
-  margin: 10px auto;
-}
-
-@media (min-width: 800px) {
-  .pesquisa{
-    width: 550px;
+.pages{
+    max-width: 550px;
     margin: 0 auto;
-  }
-
 }
 
 .bg-menu {
@@ -26,4 +18,45 @@
   color: #fff;
   background-color: #3E90CC !important;
   border-color: white;
+}
+
+@media(max-width: 800px){
+  .pages{
+    margin: 5px;
+    width: 100%;
+  }
+
+  .pages-mb{
+    display: hide;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#conteudoNavbarSuportado{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+ul.navbar-nav{
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+a{
+  margin: 5px auto !important;
+}
+
+.btn-mob{
+  margin: 5px auto !important;
+}
+
+
+
+
 }

@@ -1,0 +1,17 @@
+@media (max-width: 800px)
+{
+  #conteudoNavbarSuportado{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+
+  ul.navbar-nav{
+    margin: 0 auto;
+  }
+
+  a{
+    margin: 5px auto !important;
+  }
+}
